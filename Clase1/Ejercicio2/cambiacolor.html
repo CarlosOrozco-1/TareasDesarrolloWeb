@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiar color de fondo</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding-top: 50px;
+      transition: background-color 0.5s ease;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #007bff;
+      color: white;
+      border: #0056b3;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+</head>
+<body>
+  <h1>Haz clic para cambiar el color de fondo</h1>
+  <button onclick="cambiarColor()">Cambiar color de fondo</button>
+
+  <script>
+    function cambiarColor() { //funcion para cambiar color seleccionando aleatoriamente.
+      const color = chroma.scale(['#d1e0e0','#fde2e2', '#cdeac0', '#b9fbc0', '#a0e7e5', '#d0bdf4','#ff00cc', '#00ffff', '#39ff14', '#ffea00', '#ff0055'])(Math.random()).hex();
+      document.body.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>

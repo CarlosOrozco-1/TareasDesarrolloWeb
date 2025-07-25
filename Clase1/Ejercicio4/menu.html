@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menú de Navegación</title>
+  <link rel="stylesheet" href="menu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="#" onclick="abrirModal('inicio')">Inicio</a></li>
+      <li><a href="#" onclick="abrirModal('sobremi')">Sobre mí</a></li>
+      <li><a href="#" onclick="abrirModal('contacto')">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div id="modal" class="modal oculto">
+    <div class="tarjeta" id="contenido-modal">
+      <!-- El contenido se inserta dinámicamente -->
+    </div>
+  </div>
+
+  <script>
+    function abrirModal(seccion) {
+      const modal = document.getElementById("modal");
+      const contenido = document.getElementById("contenido-modal");
+      let html = "";
+
+      if (seccion === "inicio") {
+        html = `
+          <h3>Inicio</h3>
+          <p>Bienvenido al sitio web. Este es el módulo de inicio.</p>
+        `;
+      } else if (seccion === "sobremi") {
+        html = `
+          <h3>Sobre mí</h3>
+          <p>Mi nombre es Carlos Orozco, Estudiante de Sistemas Informaticos. Apasionado por la tecnología y el desarrollo web.</p>
+        `;
+      } else if (seccion === "contacto") {
+        html = `
+          <h3>Contacto</h3>
+          <p>Para dudas o sugerencias, escribeme por correo al correo: <h1>tuprogra@gmail.com</h1></p>
+        `;
+      }
+
+      html += `<button onclick="cerrarModal()">Cerrar</button>`;
+      contenido.innerHTML = html;
+      modal.classList.add("mostrar");
+    }
+
+    function cerrarModal() {
+        const modal = document.getElementById("modal");
+        modal.classList.remove("mostrar");
+        modal.classList.add("oculto");
+    }
+  </script>
+
+</body>
+</html>

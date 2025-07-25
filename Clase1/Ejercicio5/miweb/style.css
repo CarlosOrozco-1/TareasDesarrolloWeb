@@ -1,0 +1,52 @@
+/* ========== Tema Claro por defecto ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;  /* fondo gris claro */
+  color: #2c3e50;             /* texto gris azulado */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.banner {
+  background-image: url('https://picsum.photos/1200/300');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+main {
+  text-align: center;
+  padding: 40px;
+}
+
+/* Botón por defecto */
+button {
+  padding: 10px 20px;
+  background-color: #6c5ce7; /* lila */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a29bfe;
+}
+
+/* ========== Tema Oscuro personalizado ========== */
+body.tema-oscuro {
+  background-color: #1e1e2f; /* azul grisáceo oscuro */
+  color: #ecf0f1;            /* gris claro */
+}
+
+body.tema-oscuro button {
+  background-color: #00cec9;
+  color: #1e1e2f;
+}
+
+body.tema-oscuro button:hover {
+  background-color: #01a3a4;
+}

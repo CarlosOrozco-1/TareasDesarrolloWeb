@@ -8,21 +8,17 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-
   <!-- CSS personalizado -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body onload="bienvenida()" class="modo-oscuro">
   <div class="d-flex">
-    <!-- Sidebar-->
+    <!-- Sidebar -->
     <div id="sidebar" class="bg-dark text-white p-3 d-flex flex-column justify-content-between collapsed">
-      <!-- Sección Superior -->
       <div>
-        <!-- Título y botón de contraer -->
         <div class="d-flex justify-content-between align-items-center mb-3">
           <span id="sidebar-title" class="fw-bold fs-5">Descubre!!</span>
           <button class="btn btn-outline-light btn-sm" id="toggleSidebar" title="Contraer menú">
@@ -30,14 +26,11 @@
           </button>
         </div>
 
-        <!-- Botón de INICIO -->
         <div class="mb-3">
           <button class="btn btn-outline-info w-100 text-start menu-btn" onclick="mostrarInicio(this)">
             <i class="bi bi-house-fill me-2"></i><span class="sidebar-text">Inicio</span>
           </button>
         </div>
-
-        <!-- SITIOS TURÍSTICOS (ACORDEÓN) -->
 
         <div class="accordion accordion-flush" id="menuAccordion">
           <div class="accordion-item bg-dark border-0">
@@ -63,9 +56,7 @@
         </div>
       </div>
 
-      <!-- PIE DEL SIDEBAR -->
-
-      <!-- Botón para cambiar modo-->
+      <!-- Modo claro/oscuro -->
       <div class="modo-switch-personal">
         <div class="form-check form-switch text-white my-3">
           <input class="form-check-input" type="checkbox" id="modoSwitch" onchange="cambiarModo()" />
@@ -78,63 +69,69 @@
       </div>
     </div>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- Contenido principal -->
     <div class="flex-grow-1 p-4">
-      <!-- Banner de bienvenida -->
-      <div id="banner-bienvenida" class="text-center mb-4">
-        <h1>Bienvenido a Guatemala Turística</h1>
-        <p>Explora los sitios turísticos desde el panel lateral</p>
-        <div id="video-container" class="mx-auto" style="max-width: 850px;">
-          <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="ratio ratio-16x9">
-                  <iframe src="https://www.youtube.com/embed/RoQTqMyi89g" allowfullscreen></iframe>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="ratio ratio-16x9">
-                  <!--video1-->
-                  <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
-                  <!--video2-->
-                  <iframe width="692" height="389" src="https://www.youtube.com/embed/7xT9ztsRaiE"
-                    title="Buscando las 7 Maravillas de Guatemala - Tráiler" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                  <!--video3-->
-                  <iframe width="692" height="389" src="https://www.youtube.com/embed/ODO1ZG_EBsA"
-                    title="Buscando las 7 Maravillas de Guate - Quetzaltenango - Ep. 1" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-              </div>
-            </div>
+      <!-- Sección de bienvenida centrada -->
+      <section id="video-bienvenida" class="d-flex justify-content-center align-items-center text-center mb-4"
+        style="min-height: 80vh;">
+        <div>
+          <h1>Bienvenido a Guatemala Turística</h1>
+          <p>Explora los sitios turísticos desde el panel lateral</p>
 
-            <!-- Flechas de navegación -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
+          <!-- Carrusel de videos -->
+          <div id="video-container" class="mx-auto" style="max-width: 1200px; width: 100%;">
+            <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Video 1"></button>
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1"
+                  aria-label="Video 2"></button>
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2"
+                  aria-label="Video 3"></button>
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="3"
+                  aria-label="Video 4"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/RoQTqMyi89g" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/7xT9ztsRaiE" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/ODO1ZG_EBsA"  allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
           </div>
         </div>
+      </section>
+
+      <!-- Contenido adicional -->
+      <div id="contenido">
+        <p class="text-muted text-center">Explora y descubre los lugares más hermosos de nuestra bella Guatemala.</p>
       </div>
-
-    </div>
-
-
-    <!-- Contenido dinámico -->
-    <div id="contenido">
-      <p class="text-muted">
-        Explora y descubre los lugares mas hermosos de nuestra bella
-        Guatemala.
-      </p>
     </div>
   </div>
-  </div>
 
-  <!-- Bootstrap JS y Script personalizado -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>

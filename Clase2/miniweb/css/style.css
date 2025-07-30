@@ -1,0 +1,30 @@
+/* Sidebar tamaño y animación */
+#sidebar {
+  width: 250px;
+  min-height: 100vh;
+  transition: width 0.3s;
+}
+
+#sidebar.collapsed {
+  width: 80px;
+  overflow-x: hidden;
+}
+
+/* Ocultar textos al colapsar */
+#sidebar.collapsed .sidebar-text,
+#sidebar.collapsed #sidebar-title {
+  display: none;
+}
+
+/* Botones dentro del sidebar */
+.menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.menu-btn.active {
+  background-color: #101781;
+  color: white;
+}

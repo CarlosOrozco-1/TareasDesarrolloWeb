@@ -6,7 +6,7 @@
 }
 
 #sidebar.collapsed {
-  width: 80px;
+  width: 100px;
   overflow-x: hidden;
 }
 
@@ -27,4 +27,24 @@
 .menu-btn.active {
   background-color: #101781;
   color: white;
+}
+
+/* tamaño de iconos en el submenu */
+.accordion-body .btn i{
+  font-size: 1rem;
+}
+
+/* Espacio entre botones del submenu*/
+.accordion-body .menu-btn {
+  margin-bottom: 10px;
+}
+
+/* Eliminar margen del ultimo boton*/
+.accordion-body .menu-btn:last-child {
+  margin-botton: 0;
+}
+
+/* Espacio entre el boton de encabezado de submenu y el contenido*/
+.accordion-body {
+  margin-top: 8px;
 }

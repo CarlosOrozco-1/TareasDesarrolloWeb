@@ -30,7 +30,7 @@
 }
 
 /* tamaño de iconos en el submenu */
-.accordion-body .btn i{
+.accordion-body .btn i {
   font-size: 1rem;
 }
 
@@ -47,4 +47,94 @@
 /* Espacio entre el boton de encabezado de submenu y el contenido*/
 .accordion-body {
   margin-top: 8px;
+}
+
+/* Cambio a modo claro*/
+
+.modo-claro {
+  background-color: #f2f2f2 !important;
+  color: #222 !important;
+}
+
+.modo-claro .bg-dark {
+  background-color: #e9ecef !important;
+}
+
+.modo-claro .text-white {
+  color: #212529 !important;
+}
+
+.modo-claro .btn-outline-success {
+  border-color: #198754;
+  color: #198754;
+}
+
+.modo-claro .btn-outline-success:hover {
+  background-color: #198754;
+  color: white;
+}
+
+.modo-claro .btn-outline-info {
+  border-color: #0dcaf0;
+  color: #0dcaf0;
+}
+
+.modo-claro .btn-outline-info:hover {
+  background-color: #0dcaf0;
+  color: white;
+}
+
+/* Posicionamiento del boton switch*/
+.modo-switch-personal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50vh;
+  margin-bottom: 2vh;
+}
+
+.modo-switch-personal .form-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-check-input {
+  margin-bottom: 5px;
+}
+
+/* Estilo para modo global*/
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/*
+body.modo-claro .btn {
+  background-color: #0056b3;
+  color: white;
+}*/
+
+body.modo-oscuro {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+/*body.modo-oscuro .btn {
+  background-color: #4a90e2;
+  color: #fff;
+}*/
+
+/* Control de tamaño de video*/
+#video-container {
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#video-container .ratio {
+  border-radius: 10px;
+  overflow: hidden;
 }

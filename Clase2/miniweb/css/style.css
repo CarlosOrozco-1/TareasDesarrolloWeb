@@ -1,4 +1,5 @@
-/* Sidebar tamaño y animación */
+
+/* SIDEBAR (barra lateral) */
 #sidebar {
   width: 250px;
   min-height: 100vh;
@@ -6,7 +7,7 @@
 }
 
 #sidebar.collapsed {
-  width: 100px;
+  width: 80px;
   overflow-x: hidden;
 }
 
@@ -16,7 +17,19 @@
   display: none;
 }
 
-/* Botones dentro del sidebar */
+#toggleSidebar {
+  padding: 13px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#toggleSidebar i {
+  font-size: 1rem;
+}
+
+/* Estilo de botones del menú */
 .menu-btn {
   display: flex;
   align-items: center;
@@ -29,28 +42,29 @@
   color: white;
 }
 
-/* tamaño de iconos en el submenu */
+/* Tamaño de íconos del submenú */
 .accordion-body .btn i {
   font-size: 1rem;
 }
 
-/* Espacio entre botones del submenu*/
+/* Espacio entre botones del submenú */
 .accordion-body .menu-btn {
   margin-bottom: 10px;
 }
 
-/* Eliminar margen del ultimo boton*/
+/* Eliminar margen del último botón */
 .accordion-body .menu-btn:last-child {
-  margin-botton: 0;
+  margin-bottom: 0;
 }
 
-/* Espacio entre el boton de encabezado de submenu y el contenido*/
+/* Separación entre encabezado del acordeón y sus botones */
 .accordion-body {
   margin-top: 8px;
 }
 
-/* Cambio a modo claro*/
+/* MODO CLARO / OSCURO */
 
+/* Estilos para modo claro */
 .modo-claro {
   background-color: #f2f2f2 !important;
   color: #222 !important;
@@ -84,7 +98,19 @@
   color: white;
 }
 
-/* Posicionamiento del boton switch*/
+/* Estilos para modo oscuro */
+body.modo-oscuro {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+/* Transición suave al cambiar de modo */
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* SWITCH DE MODO CLARO/OSCURO */
+
 .modo-switch-personal {
   display: flex;
   flex-direction: column;
@@ -105,46 +131,35 @@
   margin-bottom: 5px;
 }
 
-/* Estilo para modo global*/
-body {
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
+/* CARRUSEL DE VIDEOS */
 
-/*
-body.modo-claro .btn {
-  background-color: #0056b3;
-  color: white;
-}*/
-
-body.modo-oscuro {
-  background-color: #1e1e1e;
-  color: #ddd;
-}
-
-/*body.modo-oscuro .btn {
-  background-color: #4a90e2;
-  color: #fff;
-}*/
-
-/* Control de tamaño de video*/
-#video-container {
-  max-width: 1200px;
-  width: 100%;
+/* Contenedor centrado y limitado */
+.video-wrapper {
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
-#video-container .ratio {
+/* Estilos dentro del ratio */
+.video-wrapper .ratio {
   border-radius: 10px;
   overflow: hidden;
 }
 
-#videoCarousel {
-  width: 100%;
-}
-
+/* Ajuste de iframe para ocupar todo el ratio */
 .ratio iframe {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* Clic en el iframe*/
+.carousel .carousel-item iframe {
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.carousel-item {
+  position: relative;
+  z-index: 0;
 }

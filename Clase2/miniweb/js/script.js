@@ -1,6 +1,6 @@
 // Muestra un mensaje de bienvenida y una imagen aleatoria al cargar la página
 function bienvenida() {
-  alert("Bienvenido a la Mini Web de Sitios Turísticos de Guatemala");
+  alert("Descubre lo mejor de nuestra bella Guatemala!!");
 
   // Lista de imágenes disponibles para el banner
   const imagenes = ["img/atitlan.jpg", "img/tikal.jpg"];
@@ -14,6 +14,9 @@ function bienvenida() {
 
 // Cuando el documento esté listo (DOM cargado)
 document.addEventListener("DOMContentLoaded", () => {
+  //Cargar fondos aleatorios
+  fondoAleatorio();
+
   //Activar modo claro si está guardado
   const modoGuardado = localStorage.getItem("modoClaroActivado") == "true";
   if (modoGuardado) {
@@ -99,3 +102,40 @@ function cambiarModo() {
   //Guardar preferencia en el localStorage
   localStorage.setItem("modoClaroActivado", esClaro);
 }
+
+// Detener videos al cambiar de slide en el carrusel
+
+document.addEventListener("DOMContentLoaded", () => {
+  const videoCarousel = document.getElementById("videoCarousel");
+
+  if (videoCarousel) {
+    videoCarousel.addEventListener("slide.bs.carousel", function () {
+      const iframes = videoCarousel.querySelectorAll("iframe");
+
+      iframes.forEach((iframe) => {
+        // Reinicia el video recargando el iframe
+        const src = iframe.getAttribute("src");
+        iframe.setAttribute("src", src);
+      });
+    });
+  }
+});
+
+function fondoAleatorio() {
+  const fondos = [
+    'img/fondos/fondo1.webp',
+    'img/fondos/fondo2.jpg',
+    'img/fondos/fondo3.jpg',
+    'img/fondos/fondo4.webp',
+    'img/fondos/fondo5.jpg'
+  ];
+
+  const aleatorio = fondos[Math.floor(Math.random() * fondos.length)];
+
+  document.body.style.backgroundImage = `url('${aleatorio}')`;
+  document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundAttachment = 'fixed';
+  document.body.style.backgroundRepeat = 'no-repeat';
+  document.body.style.backgroundPosition = 'center';
+}
+

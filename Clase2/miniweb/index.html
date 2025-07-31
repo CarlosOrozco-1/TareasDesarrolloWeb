@@ -19,19 +19,22 @@
     <!-- Sidebar -->
     <div id="sidebar" class="bg-dark text-white p-3 d-flex flex-column justify-content-between collapsed">
       <div>
-        <div class="d-flex justify-content-between align-items-center mb-3">
+        <!-- Encabezado del menú -->
+        <div class="d-flex justify-content-between align-items-center mb-3 flex-row-reverse">
           <span id="sidebar-title" class="fw-bold fs-5">Descubre!!</span>
           <button class="btn btn-outline-light btn-sm" id="toggleSidebar" title="Contraer menú">
             <i class="bi bi-list"></i>
           </button>
         </div>
 
+        <!-- Botón Inicio -->
         <div class="mb-3">
           <button class="btn btn-outline-info w-100 text-start menu-btn" onclick="mostrarInicio(this)">
             <i class="bi bi-house-fill me-2"></i><span class="sidebar-text">Inicio</span>
           </button>
         </div>
 
+        <!-- Submenú Sitios -->
         <div class="accordion accordion-flush" id="menuAccordion">
           <div class="accordion-item bg-dark border-0">
             <h2 class="accordion-header">
@@ -56,7 +59,7 @@
         </div>
       </div>
 
-      <!-- Modo claro/oscuro -->
+      <!-- Switch de Modo -->
       <div class="modo-switch-personal">
         <div class="form-check form-switch text-white my-3">
           <input class="form-check-input" type="checkbox" id="modoSwitch" onchange="cambiarModo()" />
@@ -64,6 +67,7 @@
         </div>
       </div>
 
+      <!-- Pie -->
       <div class="text-center small mt-3">
         <span class="sidebar-text">&copy; 2025 Guatemala Turística</span>
       </div>
@@ -71,16 +75,17 @@
 
     <!-- Contenido principal -->
     <div class="flex-grow-1 p-4">
-      <!-- Sección de bienvenida centrada -->
+      <!-- Sección de bienvenida -->
       <section id="video-bienvenida" class="d-flex justify-content-center align-items-center text-center mb-4"
         style="min-height: 80vh;">
         <div>
           <h1>Bienvenido a Guatemala Turística</h1>
-          <p>Explora los sitios turísticos desde el panel lateral</p>
+          <p>Explora lo mejor de nustra tierra!!</p>
 
-          <!-- Carrusel de videos -->
-          <div id="video-container" class="mx-auto" style="max-width: 1200px; width: 100%;">
-            <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Carrusel de videos corregido -->
+          <div id="video-container" class="mx-auto">
+            <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="false">
+              <!-- Indicadores -->
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active"
                   aria-current="true" aria-label="Video 1"></button>
@@ -90,29 +95,60 @@
                   aria-label="Video 3"></button>
                 <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="3"
                   aria-label="Video 4"></button>
+                <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="4" aria-label="Video5"></button>
               </div>
+
+              <!-- Slides -->
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/RoQTqMyi89g" allowfullscreen></iframe>
+                  <div class="video-wrapper">
+                    <div class="ratio ratio-16x9">
+                      <!-- Video 1 -->
+                      <iframe src="https://www.youtube.com/embed/RoQTqMyi89g?autoplay=1&mute=1&enablejsapi=1&fs=1"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+                  <div class="video-wrapper">
+                    <div class="ratio ratio-16x9">
+                      <!-- Video 2 -->
+                      <iframe src="https://www.youtube.com/embed/JI2TFa4p46k?enablejsapi=1&fs=1"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/7xT9ztsRaiE" allowfullscreen></iframe>
+                  <div class="video-wrapper">
+                    <div class="ratio ratio-16x9">
+                      <!-- Video 3 -->
+                      <iframe src="https://www.youtube.com/embed/7xT9ztsRaiE?enablejsapi=1&fs=1"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/ODO1ZG_EBsA"  allowfullscreen></iframe>
+                  <div class="video-wrapper">
+                    <div class="ratio ratio-16x9">
+                      <!-- Video 4 -->
+                      <iframe src="https://www.youtube.com/embed/ODO1ZG_EBsA?enablejsapi=1&fs=1"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="video-wrapper">
+                    <div class="ratio ratio-16x9">
+                      <!-- Video 5 -->
+                      <iframe src="https://www.youtube.com/embed/KIuXuPI0Ux0?enablejsapi=1&fs=1"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
+
+
+              <!-- Controles -->
               <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
               </button>
@@ -124,14 +160,14 @@
         </div>
       </section>
 
-      <!-- Contenido adicional -->
+      <!-- Contenido dinámico -->
       <div id="contenido">
         <p class="text-muted text-center">Explora y descubre los lugares más hermosos de nuestra bella Guatemala.</p>
       </div>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Bootstrap JS y scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>

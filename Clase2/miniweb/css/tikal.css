@@ -119,4 +119,24 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Encabezado*/
 
+.encabezado-tikal {
+  text-align: center;
+  background: rgba(150, 176, 123, 0.75); /* Verde oscuro con 75% opacidad */
+  color: white;
+  padding: 2em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  backdrop-filter: blur(2px); /* opcional, da un efecto de vidrio esmerilado */
+}
+
+.encabezado-tikal h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+}
+
+.encabezado-tikal .slogan {
+  font-size: 1.2em;
+  font-style: italic;
+}

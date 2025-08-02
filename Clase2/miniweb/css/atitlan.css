@@ -1,0 +1,63 @@
+.encabezado-atitlan {
+  text-align: center;
+  background: linear-gradient(rgba(30, 60, 90, 0.4), rgba(20, 40, 60, 0.7)), 
+              url('/TareasDesarrolloWeb/Clase2/miniweb/img/banner-mirador.jpg') center/cover no-repeat;
+  color: #fdfdfd;
+  padding: 4rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.encabezado-atitlan h1 {
+  font-size: 3.2rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Más sombra para contraste */
+}
+
+.encabezado-atitlan .slogan {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: 'Dancing Script', cursive;
+  color: #f0f8ff; /* Azul cielo pálido */
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); /* Mejor contraste */
+}
+
+.contenido-atitlan {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-atitlan h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  color: #14577a;
+}
+
+.contenido-atitlan ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contenido-atitlan li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.contenido-atitlan li::before {
+  content: "🌊";
+  position: absolute;
+  left: 0;
+}

@@ -1,0 +1,22 @@
+.encabezado-semuc {
+  text-align: center;
+  background: rgba(65, 160, 105, 0.7); /* Verde selva con transparencia */
+  color: white;
+  padding: 2em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  backdrop-filter: blur(2px);
+}
+
+.encabezado-semuc h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+  font-family: 'Merriweather', serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.encabezado-semuc .slogan {
+  font-size: 1.2em;
+  font-style: italic;
+  font-family: 'Dancing Script', cursive;
+}

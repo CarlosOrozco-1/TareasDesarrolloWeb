@@ -33,52 +33,82 @@ function cambiarModo() {
 }
 
 // Cargar contenido externo
+
 function cargarContenido(url, boton) {
 
   // Oculta la sección de bienvenida
   const bienvenida = document.getElementById('video-bienvenida');
-  if (bienvenida) bienvenida.style.display = 'none';
+  if (bienvenida) { 
+    // Oculta completamente la sección de bienvenida
+    bienvenida.classList.add('oculto');
+    bienvenida.style.display = 'none';
+    bienvenida.style.visibility = 'hidden';
+    bienvenida.style.height = '0';
+    bienvenida.style.margin = '0';
+    bienvenida.style.padding = '0';
+  }
 
-  // Limpia el contenido anterior y carga el nuevo
+
+
+  // Limpia el contenido anterior
+  const contenedor = document.getElementById('contenido');
+  contenedor.innerHTML = "<p>Cargando contenido...</p>";
+
+  // Fetch y parseo del contenido
   fetch(url)
     .then(res => res.text())
     .then(html => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
+      const main = doc.querySelector('main');
 
-      //main para cargar contenido
-      const nuevoContenido = doc.querySelector('main') || doc.body;
-
-      const contenedor = document.getElementById('contenido');
-      contenedor.innerHTML = ''; // Limpia antes de insertar
-      contenedor.appendChild(nuevoContenido);
+      if (main) {
+        contenedor.innerHTML = ''; // Limpia el contenedor
+        contenedor.innerHTML = main.innerHTML; // Inserta solo el contenido
+      } else {
+        contenedor.innerHTML = "<p class='text-danger'>Lo sentimos!! este sitio aun no esta disponible.</p>";
+      }
     })
     .catch(err => {
-      console.error('Lo sentimos este sitio turistico no esta disponible por el momento:', err);
+      console.error("Error al cargar el contenido:", err);
+      contenedor.innerHTML = "<p class='text-danger'>No se pudo cargar el sitio turístico.</p>";
     });
 }
+
+
 
 
 
 // Mostrar contenido de inicio
 function mostrarInicio(boton) {
   const bienvenida = document.getElementById("video-bienvenida");
-  if (bienvenida) bienvenida.style.display = "block";
+  if (bienvenida) {
+    // Restaurar la visibilidad de la bienvenida
+    bienvenida.style.display = "flex";
+    bienvenida.style.visibility = "visible";
+    bienvenida.style.height = "auto";
+    bienvenida.style.margin = "";
+    bienvenida.style.padding = "";
+    bienvenida.classList.remove("oculto"); // por si usaste la clase para ocultar
+  }
 
   const contenedor = document.getElementById("contenido");
   contenedor.innerHTML = `
-    <p class="text-muted">Selecciona un sitio del menú para ver su información aquí.</p>
+    <p class="frase-inspiradora">Explora y descubre los lugares más hermosos de nuestra bella Guatemala.</p>
   `;
 
+  // Actualiza la imagen aleatoria
+  const imagenes = ["img/atitlan.jpg", "img/tikal.jpg"];
+  const aleatoria = imagenes[Math.floor(Math.random() * imagenes.length)];
+  document.getElementById("imagen-aleatoria").src = aleatoria;
+
+  // Marcar botón activo
   document.querySelectorAll(".menu-btn").forEach((btn) =>
     btn.classList.remove("active")
   );
   if (boton) boton.classList.add("active");
 
-  const imagenes = ["img/atitlan.jpg", "img/tikal.jpg"];
-  const aleatoria = imagenes[Math.floor(Math.random() * imagenes.length)];
-  document.getElementById("imagen-aleatoria").src = aleatoria;
-
+  // Recolapsar el menú lateral si lo tenías expandido
   const sidebar = document.getElementById("sidebar");
   if (!sidebar.classList.contains("collapsed")) {
     sidebar.classList.add("collapsed");

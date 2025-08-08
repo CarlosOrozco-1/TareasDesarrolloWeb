@@ -1,0 +1,48 @@
+<section class="container my-5">
+  <h1 class="titulo-contacto text-center mb-4">
+    Contáctanos
+  </h1>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <form onsubmit="return validarFormulario();" class="form-contacto p-4">
+        <div class="mb-3">
+          <label for="nombre" class="form-label fw-semibold">Nombre</label>
+          <input type="text" id="nombre" class="form-control" placeholder="Tu nombre completo" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="correo" class="form-label fw-semibold">Correo</label>
+          <input type="email" id="correo" class="form-control" placeholder="ejemplo@correo.com" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="asunto" class="form-label fw-semibold">Asunto</label>
+          <input type="text" id="asunto" class="form-control" placeholder="Asunto del mensaje" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
+          <textarea id="mensaje" class="form-control" rows="5" placeholder="Escribe tu mensaje aquí..."
+            required></textarea>
+        </div>
+
+        <button type="submit" class="btn-enviar w-100">Enviar</button>
+      </form>
+    </div>
+
+    <div class="col-lg-4 mt-5 mt-lg-0">
+      <h3 class="titulo-ubicacion text-center mb-3">Ubicación</h3>
+      <div class="mapa-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.775310362766!2d-90.521600684606!3d14.634500589787309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858fda4507d184b1%3A0x882c4e37a96d8a13!2sThe%20Coca-Cola%20Company!5e0!3m2!1ses!2sgt!4v1691550337117!5m2!1ses!2sgt"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+  </div>
+
+
+  </div>
+  </div>
+</section>

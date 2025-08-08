@@ -1,0 +1,177 @@
+/* Estilo pagina principal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e4002b;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'lobster', cursive;
+  font-size: 2.5rem;
+  color: white; /* coca-cola rojo*/
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Banner */
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.banner{
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0 , 0, 0.1);
+  max-width: 1700px;
+  margin: 40px auto;
+}
+
+/* Descripción */
+.descripcion {
+  padding: 2rem;
+  text-align: center;
+}
+
+.descripcion h1 {
+  color: #e4002a95;
+  margin-bottom: 1rem;
+}
+
+.descripcion p {
+  font-family: 'lobster', cursive;
+  font-size: 1.1rem;
+  line-height: 1.6;
+
+}
+
+/* Footer */
+footer {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Sección de conectividad coca-cola*/
+
+.connectivity {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 900px;
+}
+
+.connectivity h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.connectivity {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 80%;
+  margin: 60px auto;
+}
+
+.connectivity h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  height: 500px;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-images img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+/* Botones */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(228, 27, 23, 0.8);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(228, 27, 23, 1);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+

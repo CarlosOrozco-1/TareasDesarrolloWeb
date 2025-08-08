@@ -1,0 +1,87 @@
+/* Diseño para titulo*/
+
+section.container > h2 {
+
+  font-family: 'Lobster', cursive; /* ya tienes la fuente Lobster cargada */
+  font-size: 3rem;
+  color: #d62d20; /* rojo Coca-Cola */
+  text-align: center;
+  position: relative;
+  margin-top: 120px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(214, 45, 32, 0.6);
+  animation: bounceInDown 1s ease;
+
+}
+
+/* Animación divertida */
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+/* Diseño para tarjetas de productos */
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  border-radius: 15px 0 0 15px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #d62d20;
+}
+
+.btn-outline-primary {
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #d62d20;
+  color: white;
+  border-color: #d62d20;
+}
+
+/* Animación suave del contenido colapsable */
+.collapse .card-body {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
